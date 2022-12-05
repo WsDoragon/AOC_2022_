@@ -1,7 +1,7 @@
 console.log("Example to read line by line text");
 const f = require('fs');
 const readline = require('readline');
-var user_file = './T2_small.txt';
+var user_file = './T2_input2.txt';
 var r = readline.createInterface({
     input : f.createReadStream(user_file)
 });
@@ -33,15 +33,20 @@ r.on('line', function (text) {
     //if(text[0] == A && text[2] == X  )
     //elf rock - me paper
     if((elves_values[text[0]] < my_values[text[2]]) || (elves_values[text[0]] === 3 && my_values[text[2]] === 1)){
-        win = win + 6 + my_values[text[2]]
-        console.log("gane con papel a roca")
+        if(!(elves_values[text[0]] === 1 && my_values[text[2]] === 3)){
+            win = win + 6 + my_values[text[2]]
+        }
+        //console.log("gane con papel a roca")
+        else {
+            win = win + 0 + my_values[text[2]]
+        }
     }
 
     else{
 
         if(elves_values[text[0]] === my_values[text[2]]){
             win = win + 3 + my_values[text[2]]
-            console.log("empate")
+            //console.log("empate")
         }
 
         else{
@@ -55,7 +60,8 @@ r.on('line', function (text) {
 */
 
 
-    console.log("a" + text);
+    //console.log("a" + text);
     console.log(win)
+    
 });
 
