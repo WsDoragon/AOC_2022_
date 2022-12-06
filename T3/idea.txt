@@ -1,0 +1,8 @@
+- separate the inputs in the half
+
+- seek for the common letter
+
+- use ascii code of letters
+    (a = 1 to z = 26 AND A = 27 to Z = 52) (equaled a to be 1 the a)
+
+-use ascii equaled to obtain the priority of items
